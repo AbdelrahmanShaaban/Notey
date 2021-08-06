@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.NotesFragment"
+
+    >
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/primary"
+            app:contentInsetLeft="0dp"
+            app:contentInsetStart="0dp"
+            app:fabAlignmentMode="center"
+            app:fabCradleRoundedCornerRadius="16dp">
+
+            <LinearLayout
+                android:id="@+id/linear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/addUrl_tv"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_ripple"
+                    android:drawableTop="@drawable/ic_url_24"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="Add Url"
+
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondary"></TextView>
+
+                <TextView
+                    android:id="@+id/image_tv"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_ripple"
+                    android:clickable="true"
+                    android:drawableTop="@drawable/ic_baseline_image_24"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="Add Image"
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondary"></TextView>
+
+                <TextView
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_ripple"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:textAllCaps="false"
+                    android:visibility="invisible"></TextView>
+
+                <TextView
+                    android:id="@+id/voice_tv"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_ripple"
+                    android:clickable="true"
+                    android:drawableTop="@drawable/ic_baseline_voice_24"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="Add Voice"
+
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondary"></TextView>
+
+                <TextView
+                    android:id="@+id/task_tv"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ic_ripple"
+                    android:clickable="true"
+                    android:drawableTop="@drawable/ic_baseline_add_task_24"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:text="Add Task"
+                    android:textAllCaps="false"
+                    android:textColor="@color/secondary"></TextView>
+
+            </LinearLayout>
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_Add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:src="@drawable/ic_baseline_add_24"
+            app:backgroundTint="@color/secondary"
+            app:layout_anchor="@+id/bottomAppBar"
+            app:layout_anchorGravity="center"
+            app:tint="@color/primary" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5dp"
+
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintTop_toBottomOf="@+id/profile_image"
+        tools:layout_editor_absoluteX="7dp" />
+
+    <TextView
+        android:id="@+id/welComeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:text="Welcome,"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/usersText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:text="User Name"
+        android:textColor="#bdbdbd"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/profile_image"
+        app:layout_constraintTop_toBottomOf="@+id/welComeText"
+        android:clickable="true"
+        />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="69dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/user"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clickable="true"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

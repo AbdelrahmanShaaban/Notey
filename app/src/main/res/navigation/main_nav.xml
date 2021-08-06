@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.notey.ui.NotesFragment"
+        android:label="fragment_notes"
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.example.notey.ui.TaskFragment"
+        android:label="fragment_task"
+        tools:layout="@layout/fragment_task" />
+    <fragment
+        android:id="@+id/voiceFragment"
+        android:name="com.example.notey.ui.VoiceFragment"
+        android:label="fragment_voice"
+        tools:layout="@layout/fragment_voice" />
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.notey.ui.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.notey.ui.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="com.example.notey.ui.AddFragment"
+        android:label="fragment_add"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+        <argument
+            android:name="Note"
+            app:argType="com.example.notey.presistence.Note"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
+    </fragment>
+</navigation>
